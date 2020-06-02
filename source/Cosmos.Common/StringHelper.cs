@@ -4,9 +4,6 @@ using System;
 using Cosmos.Debug.Kernel;
 
 namespace Cosmos.Common {
-    /// <summary>
-    /// Helper class for working with strings.
-    /// </summary>
     public static class StringHelper {
         private static Debugger mDebugger = new Debugger("Common", "StringHelper");
 
@@ -18,11 +15,6 @@ namespace Cosmos.Common {
             Greater = 1
         }
 
-        /// <summary>
-        /// Parse uint to string.
-        /// </summary>
-        /// <param name="aValue">A value to parse.</param>
-        /// <returns>String value.</returns>
         public static string GetNumberString(uint aValue) {
             mDebugger.SendInternal("StringHelper.GetNumberString(uint)");
 
@@ -43,11 +35,6 @@ namespace Cosmos.Common {
             return xResult;
         }
 
-        /// <summary>
-        /// Parse int to string.
-        /// </summary>
-        /// <param name="aValue">A value to parse.</param>
-        /// <returns>String value.</returns>
         public static string GetNumberString(int aValue) {
             mDebugger.SendInternal("StringHelper.GetNumberString(int)");
 
@@ -77,11 +64,6 @@ namespace Cosmos.Common {
             return xResult;
         }
 
-        /// <summary>
-        /// Parse ulong to string.
-        /// </summary>
-        /// <param name="aValue">A value to parse.</param>
-        /// <returns>String value.</returns>
         public static string GetNumberString(ulong aValue) {
             mDebugger.SendInternal("StringHelper.GetNumberString(ulong)");
 
@@ -114,11 +96,6 @@ namespace Cosmos.Common {
             return xResult;
         }
 
-        /// <summary>
-        /// Parse long to string.
-        /// </summary>
-        /// <param name="aValue">A value to parse.</param>
-        /// <returns>String value.</returns>
         public static string GetNumberString(long aValue) {
             mDebugger.SendInternal("StringHelper.GetNumberString(long)");
 
@@ -164,12 +141,6 @@ namespace Cosmos.Common {
          * I'd have an analogous problem: to plug BigInteger.ToString() and I don't know how many other things.
          * We will retain this code for now it is OK for debug purposes and big value should be printed in scientific notation to be readable anyway...
          */
-        /// <summary>
-        /// Parse float to string.
-        /// </summary>
-        /// <param name="aValue">A value to parse.</param>
-        /// <remarks>aValue integer part must be < ULONG_MAX.</remarks>
-        /// <returns>String value.</returns>
         public static string GetNumberString(float aValue) {
             mDebugger.SendInternal("StringHelper.GetNumberString(float)");
 
@@ -280,12 +251,6 @@ namespace Cosmos.Common {
          * I'd have an analogous problem: to plug BigInteger.ToString() and I don't know how many other things.
          * We will retain this code for now it is OK for debug purposes and big value should be printed in scientific notation to be readable anyway...
          */
-        /// <summary>
-        /// Parse double to string.
-        /// </summary>
-        /// <param name="aValue">A value to parse.</param>
-        /// <remarks>aValue integer part must be < ULONG_MAX.</remarks>
-        /// <returns>String value.</returns>
         public static string GetNumberString(double aValue) {
             mDebugger.SendInternal("StringHelper.GetNumberString(double)");
             mDebugger.SendInternal("aValue = ");
@@ -396,11 +361,6 @@ namespace Cosmos.Common {
             return result;
         }
 
-        /// <summary>
-        /// Parse string to int.
-        /// </summary>
-        /// <param name="aString">A string to parse.</param>
-        /// <returns>Int value.</returns>
         public static int GetStringToNumber(string aString) {
             bool xIsNegative = false;
             int xNumber = 0;
@@ -432,17 +392,6 @@ namespace Cosmos.Common {
             return xNumber;
         }
 
-        //TODO: remove unused parameters, or at least wrap the function to one without unused parameters(for the sake of backwards compatibility).
-        /// <summary>
-        /// Compare two strings lexicographically.
-        /// </summary>
-        /// <param name="aString1">String to compare.</param>
-        /// <param name="aIndex1">unused.</param>
-        /// <param name="aString2">String to compare.</param>
-        /// <param name="aIndex2">unused.</param>
-        /// <param name="aLength1">unused.</param>
-        /// <param name="aLength2">unused.</param>
-        /// <returns>Int value.</returns>
         public static int Compare(string aString1, int aIndex1, string aString2, int aIndex2, int aLength1, int aLength2) {
             if (aString1.Length < aString2.Length) {
                 return (int)StringComparisonResultEnum.Less;
