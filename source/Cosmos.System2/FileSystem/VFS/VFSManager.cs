@@ -493,6 +493,9 @@ namespace Cosmos.System.FileSystem.VFS
         /// </summary>
         /// <param name="aPath">A path to the file.</param>
         /// <returns>bool value.</returns>
+        /// <remarks>
+        /// This function will not throw any exception on failure.
+        /// </remarks>
         public static bool FileExists(string aPath)
         {
             Global.mFileSystemDebugger.SendInternal("VFSManager.FileExists");
@@ -527,6 +530,9 @@ namespace Cosmos.System.FileSystem.VFS
         /// </summary>
         /// <param name="aEntry">A entry of the file.</param>
         /// <returns>bool value.</returns>
+        /// <remarks>
+        /// This function will not throw any exception on failure.
+        /// </remarks>
         public static bool FileExists(DirectoryEntry aEntry)
         {
             Global.mFileSystemDebugger.SendInternal("--- VFSManager.FileExists ---");

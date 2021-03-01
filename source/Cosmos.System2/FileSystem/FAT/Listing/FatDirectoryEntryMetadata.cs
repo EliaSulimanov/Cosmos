@@ -14,6 +14,11 @@
         /// </summary>
         public readonly uint DataLength;
 
+        /// <summary>
+        /// Fat directory entry metadata.
+        /// </summary>
+        /// <param name="aDataOffset">Data offset.</param>
+        /// <param name="aDataLength">Data length.</param>
         private FatDirectoryEntryMetadata(uint aDataOffset, uint aDataLength)
         {
             DataOffset = aDataOffset;
@@ -25,7 +30,7 @@
         /// </summary>
         public static readonly FatDirectoryEntryMetadata FirstByte = new FatDirectoryEntryMetadata(0x00, 1);
         /// <summary>
-        /// Directory entry short name matadata. This is the filename + filename extension. 
+        /// Directory entry short name matadata. This is the filename + filename extension.
         /// The dot '.' separate filename and filename extention is implied.
         /// </summary>
         public static readonly FatDirectoryEntryMetadata ShortName = new FatDirectoryEntryMetadata(0x00, 11);

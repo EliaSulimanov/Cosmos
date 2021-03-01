@@ -229,6 +229,9 @@ namespace Cosmos.System.FileSystem
         /// </summary>
         /// <param name="aPath">The full path.</param>
         /// <returns>TRUE on success.</returns>
+        /// <remarks>
+        /// This function will not throw any exception on failure.
+        /// </remarks>
         public override bool DeleteFile(DirectoryEntry aPath)
         {
             try
@@ -248,6 +251,9 @@ namespace Cosmos.System.FileSystem
         /// </summary>
         /// <param name="aPath">The full path.</param>
         /// <returns>TRUE on success.</returns>
+        /// <remarks>
+        /// This function will not throw any exception on failure.
+        /// </remarks>
         public override bool DeleteDirectory(DirectoryEntry aPath)
         {
             try
